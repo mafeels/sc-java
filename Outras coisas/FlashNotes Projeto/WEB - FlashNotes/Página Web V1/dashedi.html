@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo.css" type="text/css">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <!-- Bootstrap -->
+        <link href="bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        
+        <ul class="topnav">
+            <li><a href="#"><h4><img src="logo2.svg" width="20" height="20" alt="LogoFlashNotes"/> Flashnotes</h4></a></li>
+            <li class="right"><h4><a href="#loja">Ir para loja</a></h4></li>
+        </ul>
+       
+        <aside>
+            <ul class="sidenav">
+                <li>
+                    <img src="user1.png" class="img-circle" alt="Cinque Terre" width="120" height="120">
+                    <div class="sidedet">
+                        <h5>Edilsinho Ferreira</h5>
+                       
+                        <select name="tipo">
+                            <option>Aluno</option>
+                            <option>Prof</option>
+                        </select>
+                        <br><br>
+                        <input type="button" value="conta" name="Conta" />
+                    </div>
+                </li>
+                <li>
+                <hr>
+                </li>
+                <li><h3>Categorias</h3></li>
+
+                <li class="categoria"><a href="login.html">Biologia</a></li>
+                <li class="categoria"><a href="dashedi.html">Fisica</a></li>
+                <li class="categoria">Quimica</li>
+                <li class="categoria">Historia>Matematica</li>
+                <li class="categoria">Edilsinho passou na OMU</li>
+            </ul>
+        </aside>
+        <section>
+            <br>
+            <br>
+            <div class="col-md-2">
+	              <div class="row">
+	                <div class="col-lg-12">
+	                  <div class="input-group form">
+	                       <input type="text" class="form-control" placeholder="Pesquise...">
+	                       <span class="input-group-btn">
+	                         <button class="btn btn-primary" type="button">Pesquise</button>
+	                       </span>
+	                  </div>
+	                </div>
+	              </div>
+	    </div>
+            <br>
+            <br>
+            <hr>
+            <div class="flashcards">
+                <form>
+                    <fieldset>
+                        <legend>Frente</legend>
+                        <textarea name="Frente" rows="4" cols="20">
+                        </textarea>
+                        <legend>Verso</legend>
+                        <textarea name="Verso" rows="4" cols="20">
+                        </textarea>
+                    </fieldset>
+                    <br><br>
+                    <a class="btn btn-primary signup" href="#">Pronto</a>
+                    <a class="btn btn-primary signup" href="#">Proximo</a>
+                </form>
+            </div>
+        </section>
+        
+    </body>
+</html>

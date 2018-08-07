@@ -1,0 +1,7 @@
+Esse é um trabalho feito por alunos do 2º ano de informatica integrado ao tecnico no IFSP, se considerar que algumas partes
+do codigo são ruins e feitas de modo grosseiro, não apenas diga "que merda", de alguma dica para melhorar por favor!
+
+NOS AJUDE A APRENDER, POR FAVOR, SÉRIO, NUNCA TE PEDI NADA!
+
+// eu tambem quero parar de resolver exceção usando throws gua gua gua....
+

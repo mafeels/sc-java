@@ -1,0 +1,41 @@
+<ui:composition template="/templates/login_template.xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+<ui:define name="login_conteudo">
+        <div class="page-content container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 login well">
+                    <div class="login-wrapper">
+                        <div class="box">
+                            <div class="forms">
+                                <div class="brandImg">
+                                    <img src="images/logomin.png" alt="LogoShareCards" class="brandImgForm"/>
+                                </div>
+		                        <h:form>
+		                        	<h:outputLabel value="Email"/>
+		                        <h:inputText value="#{usuarioBean.email}" class="form-control"/>
+			                        <h:outputLabel value="Senha"/>
+			                        <h:inputSecret value="#{usuarioBean.senha}" class="form-control" />
+			                        <br/>
+			                        <p id="valid" class="message1"></p>
+			                        <h:commandButton action="#{usuarioBean.validaLogin}" value="Entrar" class="inmain"/>
+		                    	</h:form>
+                                <div>
+                                    <a class="linkable" href="esqueciSenha1.html">Esqueceu a senha?</a>
+                                </div>
+                                
+                                <div class="alert alert-danger alerta" data-dismiss="alert">
+                                    Preencher todos os campos!
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+ </ui:define>
+</ui:composition>

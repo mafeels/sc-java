@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Insert title here</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+    <link href="css/sidebar.css" rel="stylesheet" type="text/css"/>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css"/> 
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+    
+    </head>
+    <body class="siteBackground">
+        <div class="header">
+            <header class="container">
+                <div class="row">
+                <a class="col-xs-12 col-sm-6 col-md-3 buttonheader" href="index.html">ShareCards</a>
+                <a class="col-xs-12  col-sm-6 col-md-3 col-md-offset-6 buttonHeader" onclick="sair()"><span class="glyphicon glyphicon-log-in"></span>  Sair</a> 
+                </div>
+            </header>
+        </div>
+           <aside class="sidenav">
+                <div class="col-md-pull-2 column">
+                    <img onclick="window.location.href = 'configPerfil.html'" src="images/edi_perfil.PNG" class="img-responsive img-circle" alt="Imagem do usuário">
+                    <h4><strong>Edilsinho Ferreira</strong></h4>
+                    <a class="cold-sn-1 btn btn-default" href="configPerfil.html">Conta</a>
+                </div>
+                </aside>
+
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="input-group form">
+                            <input type="text" class="form-control" placeholder="Pesquise...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">Pesquise</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-md btn-warning" type="button" onclick="window.location.href = 'biblioteca.html'">Biblioteca de flashcards</button>
+            <button class="btn btn-primary btn-md" type="button" onclick="window.location.href = 'dash.html'">Retornar ao Dashboard</button>
+            <div class="flashcards2">
+                <input type="button" value="Revelar" class="inmainRev btn-success" onclick="document.querySelector('.flip-container').classList.toggle('hover');"/>
+                <div class="flip-container noHover" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <form>
+                                <fieldset>
+                                    <div>
+                                        <legend>Frente</legend>
+                                        <textarea name="Verso" rows="4" cols="20">O que o Felipe Michelin está fazendo agora?</textarea>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="back">
+                            <form>
+                                <fieldset>
+                                    <div>
+                                        <legend>Verso</legend>
+                                        <textarea name="Verso" rows="4" cols="20">Nada.</textarea>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <script src="js/flashnotes.js"></script>
+        <script src="js/jquery-3.2.1.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#TutTog").click(function () {
+                    $("#TutContent").fadeToggle();
+                });
+            });
+        </script>
+
+    </body>
+</html>

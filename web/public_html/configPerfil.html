@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilo.css" type="text/css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
+        <script src="js/flashnotes.js"></script>
+        <link rel="stylesheet" href="css/w3.css">
+    </head>
+    <body>
+        <div class="header">
+            <header class="container">
+                <div class="row">
+                <a class="col-xs-12 col-sm-6 col-md-3 buttonheader" href="index.html">ShareCards</a>
+                <a class="col-xs-12  col-sm-6 col-md-3 col-md-offset-6 buttonHeader" onclick="sair()">Sair</a> 
+                </div>
+            </header>
+        </div>
+        <br>
+        <br><br><br>  
+        <div class="col-xs-12 perfil1">
+            <br>
+                        <br>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <h2 id="dash"><i>Perfil</i></h2>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+                <button class="btn btn-primary btn-lg center-block" type="button" onclick="window.location.href = 'dash.html'">Retornar ao Dashboard</button>
+            </div>
+            <br><br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" >
+                <img src="images/edi_perfil.PNG" class="img-circle center-block" alt="Imagem do usuário" >
+            </div>
+            <div id="editPerf" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <h4><strong>Edilsinho Ferreira</strong></h4>
+                <form action="envia_foto.php" method="post"> 
+                    <input type="file" name="Arquivo" id="Arquivo">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Apagar"> 
+                </form>
+                <br>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="first_name" class="col-lg-3 control-label">Primeiro nome:</label>
+                        <div class="col-lg-8">
+                            <input  id="first_name" class="form-control" type="text" value="Edilsinho">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name" class="col-lg-3 control-label">Ultimo nome:</label>
+                        <div class="col-lg-8">
+                            <input  id="last_name" class="form-control" type="text" value="Ferreira">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email" class="col-lg-3 control-label">Email:</label>
+                        <div class="col-lg-8">
+                            <input id="user_email" class="form-control" type="text" value="edilsinho_Xtreme@gmail.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass" class="col-md-3 control-label">Nova senha:</label>
+                        <div class="col-md-8">
+                            <input id="pass" class="form-control" type="password" value="BIGOVRAU">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass_repet" class="col-md-3 control-label">Confirmar senha:</label>
+                        <div class="col-md-8">
+                            <input  id="pass_repet" class="form-control" type="password" value="BIGOVRAU">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"></label>
+                        <div class="col-md-8">
+                            <input type="button" class="btn btn-primary" value="Salvar Mudanças">
+                        </div>
+                    </div>
+                </form>
+            
+            </div>
+        </div>
+    </body>
+</html>

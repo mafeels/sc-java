@@ -1,0 +1,1 @@
+select * from flashcard order by preco_flashcard asc;

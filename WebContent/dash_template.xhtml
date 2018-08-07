@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" version="2.0">
+    <jsp:directive.page language="java"
+        contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" />
+    <jsp:text>
+        <![CDATA[ <?xml version="1.0" encoding="ISO-8859-1" ?> ]]>
+    </jsp:text>
+    <jsp:text>
+        <![CDATA[ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> ]]>
+    </jsp:text>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css"/> 
+    <link href="css/sidebar.css" rel="stylesheet" type="text/css"/> 
+     
+    <title>Dashboard</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    </head>
+<body>
+<f:view>
+<div id="throbber" style="display:none; min-height:120px;"></div>
+<div id="noty-holder"></div>
+<div id="wrapper">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        
+        <div>
+
+            <a class="navbar-brand" href="#">
+                <img src="images/logomin.png" width="170" height="50" alt="LOGO"/>
+            </a>
+        <ul class="nav navbar-right top-nav">          
+            <li>
+                <a href="#">Sair</a>
+            </li>
+            
+            <li>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            
+            </li>
+        </ul>
+        </div>
+       
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <li class="elementoSidenav">
+                    <img onclick="window.location.href = 'configPerfil.html'" src="images/edi_perfil.PNG" class="img-responsive img-circle" alt="Imagem do usuário" id="img-perfil"/>
+                </li>
+                <li>
+                    
+                    
+                </li>
+                <li class="elementoSidenav">
+                    <div>
+                        <h5>Edilsinho Ferreira
+                        <a class="btn btn-default" href="configPerfil.html">
+                        <span class="glyphicon glyphicon-wrench"></span>
+                        </a>
+                        </h5>
+                    </div>
+                </li>
+                <li>
+                    <div class="input-group form">
+                            <input type="text" class="form-control" placeholder="Pesquise..."/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                            </span>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> Categorias <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <ul id="submenu-1" class="collapse">
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.1</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.2</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 1.3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <p>conteudo</p>
+  
+</div>
+                                                                  
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="estudar.js"></script>
+
+</f:view>
+</body>
+</html>
+</jsp:root>

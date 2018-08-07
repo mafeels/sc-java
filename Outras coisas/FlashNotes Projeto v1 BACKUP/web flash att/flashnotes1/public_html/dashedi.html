@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilo.css" type="text/css">
+        <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+        <script src="js/flashnotes.js"></script>
+        <link rel="stylesheet" href="css/w3.css">
+    </head>
+    <body>
+        
+        <header>
+            <a id="Logo" href="dash.html">FlashNotes</a>
+            <a id="Entrar" href="login.html">Ir a Loja</a>   
+        </header>
+       
+        <aside>
+            <ul class="sidenav">
+                <li>
+                    <img src="images/user1.png" class="img-circle" alt="Cinque Terre" width="120" height="120">
+                    <div class="sidedet">
+                        <h5>Edilsinho Ferreira</h5>
+                       
+                        <select name="tipo">
+                            <option>Aluno</option>
+                            <option>Prof</option>
+                        </select>
+                        <br><br>
+                        <a class="btn btn-default" href="#">Conta</a>
+                    </div>
+                </li>
+                <li>
+                <hr>
+                </li>
+                <li><h3>Categorias</h3></li>
+
+                <li class="categoria"><a href="login.html">Biologia</a></li>
+                <li class="categoria"><a href="dashedi.html">Fisica</a></li>
+            </ul>
+        </aside>
+        <section>
+            <br>
+            <br>
+            <div class="col-md-2">
+	              <div class="row">
+	                <div class="col-lg-12">
+	                  <div class="input-group form">
+	                       <input type="text" class="form-control" placeholder="Pesquise...">
+	                       <span class="input-group-btn">
+	                         <button class="btn btn-primary" type="button">Pesquise</button>
+	                       </span>
+	                  </div>
+	                </div>
+	              </div>
+	    </div>
+            <br>
+            <br>
+            <hr>
+            <div class="flashcards2">
+                <form>
+                    <fieldset>
+                    <div class="fieldleft">
+                        <legend>Frente</legend>
+                        <textarea name="Verso" rows="4" cols="20">
+(Fuvest-2013) São dados, no plano cartesiano, o ponto P de coordenadas(3,6) e a circunferencia C de equação (x-1)^2 + (y-2)^2 = 1. Uma reta t passa por P e é a tangete de C em um ponto Q. Então a distância de P a Q é:
+
+                            a) raiz de 15
+                            b) raiz de 17
+                            c) raiz de 18
+                            d) raiz de 19
+                            e) raiz de 20
+                        </textarea>
+                    </div>
+                    <div class="fieldright">
+                        <legend>Verso</legend>
+                        <textarea name="Verso" rows="4" cols="20" id="sub"></textarea>
+                    </div>
+                    </fieldset>
+                    <br><br>
+                    <h4 id="valid"></h4>
+                    <input type="button" value="Pronto" class="inmain" onclick="validateAnswer(document.getElementById('sub').value)">
+                    <input type="button" value="Proximo" class="inmain">
+                </form>
+            </div>
+        </section>
+        
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" version="2.0">
+    <jsp:directive.page language="java"
+        contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" />
+    <jsp:text>
+        <![CDATA[ <?xml version="1.0" encoding="ISO-8859-1" ?> ]]>
+    </jsp:text>
+    <jsp:text>
+        <![CDATA[ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> ]]>
+    </jsp:text>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+<f:view>
+	<h:form>
+		<h:outputText value="codigo do usuario"/>
+		<h:inputText value="#{flashcardBean.codigoUsuario}" />
+		<h:outputText value="codigo do flashcard"/>
+		<h:inputText value="#{flashcardBean.codigoFlashcard}" />
+		<br/>
+		<h:commandButton value="pesquisar" action="#{flashcardBean.pegarDados}"/>
+		</h:form>
+</f:view>
+</body>
+</html>
+</jsp:root>

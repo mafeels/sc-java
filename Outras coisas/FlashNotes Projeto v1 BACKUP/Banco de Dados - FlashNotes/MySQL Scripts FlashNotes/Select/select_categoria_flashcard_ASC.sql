@@ -1,0 +1,1 @@
+select * from flashcard order by categoria_flashcard asc;

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilo.css" type="text/css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/w3.css">
+        <script src="js/jquery-3.2.1.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#TutTog").click(function () {
+                    $("#TutContent").fadeToggle();
+                });
+            });
+        </script>
+        <script src="js/flashnotes.js"></script>
+    </head>
+    <body>
+         <div class="navbar navbar-fixed-top header">
+            <header class="container">
+                <div class="row">
+                <a class="col-xs-12 col-sm-6 col-md-3 buttonheader" href="index.html">FlashNotes</a>
+                <a class="col-xs-12  col-sm-6 col-md-3 col-md-offset-6 buttonHeader" onclick="sair()"><span class="glyphicon glyphicon-log-in"></span>  Sair</a> 
+                </div>
+            </header>
+        </div>
+        
+        <aside>
+            <ul class="sidenav">
+                <li>
+                    <img onclick="window.location.href = 'configPerfil.html'" src="images/edi_perfil.PNG" class="img-circle" alt="Imagem do usuário" style="width: 40%; height: 40%;">
+                    <div class="sidedet" style="width: 50%; height: 50%;">
+                        <h4><strong>Edilsinho Ferreira</strong></h4>
+                        <a class="btn btn-default" href="configPerfil.html">Conta</a>
+                    </div>
+                </li>
+                <li>
+                    <hr>
+                </li>
+                <li><h3>Categorias da Biblioteca</h3></li>
+
+                <li class="categoria"><a href="login.html">Biologia</a></li>
+                <li class="categoria"><a href="dashFlash.html">Fisica</a></li>
+                <li class="categoria"><a href="dashFlash.html">Matemática</a></li>
+                <li class="categoria"><a href="dashFlash.html">Geografia</a></li>
+                <li class="categoria"><a href="dashFlash.html">Filosofia</a></li>
+                <li>
+                    <br><br><br><br><br><br><div class="linha"></div>
+                </li>
+                <li><div class="panel panel-primary">
+                        <div class="panel-heading" id="TutTog">Guia e Tutorial - Clique me!</div>
+                        <div class="panel-body" id="TutContent" style="display: none">
+                            <p>Você pode configurar seu perfil pelo botão Conta ou clicando na sua foto.</p>
+                            <hr>
+                            <p>Você pode utilizar os flashcards padrão do seu dashboard para testar a funcionaliade deles.</p>
+                            <hr>
+                            <p>Navegue pela Biblioteca de Flashcards para descobrir novos flashcards e possivelmente comprá-los!</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </aside>
+        <section>
+            <br>
+            <br>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="input-group form">
+                            <input type="text" class="form-control" placeholder="Pesquise...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">Pesquise</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'dash.html'">Retornar ao Dashboard</button>
+
+            <br>
+            <br>
+            <hr>
+            <div class="flashcards1">
+                <h2 id="dash"><i>Biblioteca - Explore os Flashcards!</i></h2>
+                <div class="linha"></div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/Cover.jpg" alt="flashcard de música">
+                    </a>
+                    <div class="desc">Música</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/mona.jpg" alt="flashcard de Artes">
+                    </a>
+                    <div class="desc">Artes</div>
+                </div>
+
+                <div class="gallery">
+                    <a href="dashedi_2.html">
+                        <img src="images/com.jpg" alt="flashcard de comunismo">
+                    </a>
+                    <div class="desc">Comunismo</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/Will Min.png" alt="flashcard de Minimalismo">
+                    </a>
+                    <div class="desc">Minimalismo</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/sand.jpg" alt="flashcard de Sandrini">
+                    </a>
+                    <div class="desc">Sandrini</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/html.png" alt="flashcard de HTML">
+                    </a>
+                    <div class="desc">HTML</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/carro.jpg" alt="flashcard de Carros Esportivos">
+                    </a>
+                    <div class="desc">Carros Esportivos</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/Banhe.jpg" alt="flashcard de Banheiras">
+                    </a>
+                    <div class="desc">Banheiras</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/guerra.jpg" alt="flashcard de Guerra na Síria">
+                    </a>
+                    <div class="desc">Guerra na Síria</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/ampulheta.png" alt="flashcard de ...">
+                    </a>
+                    <div class="desc">Carregando...</div>
+                </div>
+
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/ampulheta.png" alt="flashcard de ...">
+                    </a>
+                    <div class="desc">Carregando...</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/ampulheta.png" alt="flashcard de ...">
+                    </a>
+                    <div class="desc">Carregando...</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/ampulheta.png" alt="flashcard de ...">
+                    </a>
+                    <div class="desc">Carregando...</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/ampulheta.png" alt="flashcard de ...">
+                    </a>
+                    <div class="desc">Carregando...</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/ampulheta.png" alt="flashcard de ...">
+                    </a>
+                    <div class="desc">Carregando...</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/ampulheta.png" alt="flashcard de ...">
+                    </a>
+                    <div class="desc">Carregando...</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/ampulheta.png" alt="flashcard de ...">
+                    </a>
+                    <div class="desc">Carregando...</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/ampulheta.png" alt="flashcard de ...">
+                    </a>
+                    <div class="desc">Carregando...</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/ampulheta.png" alt="flashcard de ...">
+                    </a>
+                    <div class="desc">Carregando...</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/ampulheta.png" alt="flashcard de ...">
+                    </a>
+                    <div class="desc">Carregando...</div>
+                </div>
+                <div class="gallery">
+                    <a href="dashFlash.html">
+                        <img src="images/ampulheta.png" alt="flashcard de ...">
+                    </a>
+                    <div class="desc">Carregando...</div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>

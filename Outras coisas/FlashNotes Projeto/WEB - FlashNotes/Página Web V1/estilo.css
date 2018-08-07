@@ -1,0 +1,83 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21/06/2017, 02:49:23
+    Author     : WIN7PRO
+*/
+
+body {margin: 0;}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    text-decoration: none;
+
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+ul.topnav li a:hover:not(.active) {background-color: #3498db;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+ul.sidenav {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px 15px;
+    width: 22%;
+    background-color: #ecf0f1;
+    height: 150%; /* Full height */
+    position: absolute; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    text-decoration: none;
+}
+
+ul.sidenav li div.sidedet{
+    float: right;
+    padding: 5px 5px 5px 5px;
+ 
+}
+ul.sidenav li.categoria {
+    padding: 5px 15px;
+    list-style-type: none;
+    margin: 2px;
+    text-decoration: none;
+}
+
+section {
+    position: relative;
+    left: 22%;
+}
+
+div.flashcards {
+    background-color: #ecf0f1;
+    padding: 10px 20px 20px 10px;
+    margin: 10px 10px 10px 10px;
+}
+
+.sidebar {
+    position: relative;
+    width: 400px;
+    height: 700px;
+    background-color: #ecf0f1;
+    left: 70.25%;
+    position: relative;
+    padding: 70px 70px 70px 70px;
+    
+}

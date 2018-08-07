@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" version="2.0">
+    <jsp:directive.page language="java"
+        contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" />
+    <jsp:text>
+        <![CDATA[ <?xml version="1.0" encoding="ISO-8859-1" ?> ]]>
+    </jsp:text>
+    <jsp:text>
+        <![CDATA[ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> ]]>
+    </jsp:text>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Registro</title>
+	
+	<meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/estilo.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+        
+	</head>
+<body>
+<f:view>
+
+       <div class="header">
+            <header class="container">
+                <div class="row">
+                <a class="col-xs-12 col-sm-12 col-md-3" href="#">ShareCards</a>
+                <a class="col-xs-12 col-sm-12 col-md-3 col-md-offset-6 buttonHeader" href="login.xhtml">Entrar</a> 
+                </div>
+            </header>
+        </div>
+        
+        <div class="clearbox"></div>
+        <div class="row">
+            <div class="col-xs-12 col-md-8 column">
+                <div class="hook">
+                    <h3 id="loremIpsum">Aprenda rápido!</h3>
+                    <p id="textLoremIpsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
+                        Nunc odio leo, eleifend eget dapibus vel,<br/> pulvinar pretium eros.<br/> Pellentesque eleifend ipsum et sapien tristique blandit.
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 column column">
+                <br/><br/><br/>
+                <div class="forms">
+                    <p id="regist"><i>Registre-se</i></p>
+                    <h:form>
+                        <h:outputLabel value="Primeiro Nome"/>
+                        <h:inputText value="#{usuarioBean.primeiroNome}" class="inmaind"/>
+                        <h:outputLabel value="Segundo Nome"/>
+                        <h:inputText value="#{usuarioBean.ultimoNome}" class="inmaind"/>
+                        <h:outputLabel value="Data de nascimento"/>
+                        <h:inputText value="#{usuarioBean.dataNascimento}" class="inmaind"/>
+                        <h:outputLabel value="Username"/>
+                        <h:inputText value="#{usuarioBean.username}" class="inmaind"/>
+                        <h:outputLabel value="Email"/>
+                        <h:inputText value="#{usuarioBean.email}" class="inmaind"/>
+                        <h:outputLabel value="Senha"/>
+                        <h:inputSecret value="#{usuarioBean.senha}"  class="inmaind"/>
+                        <br/>
+                        <p id="valid" class="message1"></p>
+                        <h:commandButton value="Registrar-se" action="#{usuarioBean.insereUsuario}" class="inmain"/>
+                    </h:form>
+                </div>
+            </div>
+            <div class="clearbox"></div>
+        </div>
+        
+     <!-- Scripts -->   
+    <script src="js/flashnotes.js"></script>
+
+</f:view>
+</body>
+</html>
+</jsp:root>

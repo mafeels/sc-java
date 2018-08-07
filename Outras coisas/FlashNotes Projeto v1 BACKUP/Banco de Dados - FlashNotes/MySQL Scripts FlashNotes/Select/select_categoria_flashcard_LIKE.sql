@@ -1,0 +1,1 @@
+select * from flashcard where categoria_flashcard like 'Biologia%';/*exemplo*/
