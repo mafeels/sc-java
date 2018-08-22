@@ -22,6 +22,14 @@ public class FlashcardBean {
 	//FlashcardDAO fc= new JDBCFlashcardDAO();
 	private ArrayList<Flashcard> dados; //= fc.obterFlashcard();
 	
+	public FlashcardBean(){
+		FlashcardDAO decks = new JDBCFlashcardDAO();
+		this.dados = decks.obterDecks("1");
+	}
+	
+	public void obterDeckPublicos() {
+		
+	}
 	
 	public void insereFlashcard() throws ClassNotFoundException, SQLException, NoSuchAlgorithmException, NoSuchProviderException, UnsupportedEncodingException{
 		Flashcard flash = new Flashcard();
@@ -37,7 +45,7 @@ public class FlashcardBean {
 		FlashcardDAO edFl = new JDBCFlashcardDAO();
 		edFl.insereFlashcard(flash);
 	}
-	
+
 	public void insereFlashcardSemIMG() throws ClassNotFoundException, SQLException{
 		Flashcard flash = new Flashcard();
 		UsuarioBean ub = new UsuarioBean();

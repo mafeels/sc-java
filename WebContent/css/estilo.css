@@ -352,11 +352,10 @@ div.flashcards2 {
 
 
 
-#dash{
-    font-family: 'Roboto' , sans-serif;
-    text-align: center;
-    color: black;
-    margin: 0 auto;
+div.dash{
+	margin: 0 auto;
+    color: rgb(218,223,225,0.5);
+    background-color: rgb(218,223,225);
 }
 
 
@@ -642,10 +641,7 @@ input::placeholder {
 .linha{
     display: block;
     height: 1px;
-    border: 0;
-    border-top: 1px solid black;
-    margin: 1em 0;
-    padding: 0; 
+    margin-top: 1px rgb(218,223,225); 
 }
 #TutTog:hover{
     background-color: #2980b9;

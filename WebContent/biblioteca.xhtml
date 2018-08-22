@@ -1,0 +1,33 @@
+<ui:composition template="/templates/dash_template.xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	>
+	
+<ui:define name="dash_conteudo">
+     
+
+    <div id="page-wrapper">
+        <div class="container-fluid well" >        
+            <button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'dash.xhtml'">Retornar ao Dashboard</button>
+                      
+            <div>
+            	<div class="linha"></div>
+                <h2 id="dash">Biblioteca</h2>
+                <div class="linha"></div>
+               
+               <ui:repeat value="#{flashcardBean.dados}" var="thumb">
+	                	<div class="gallery">
+	                		<a href="dashFlash.html">
+	                			<img src="images/ampulheta.png" alt="flashcard"/>
+	                		</a>
+	                		<div class="desc"><h:outputText value="#{thumb.nomeFlashcard}"></h:outputText> </div>
+	                	</div>
+               </ui:repeat>
+               
+            </div>    
+       </div>
+      </div>
+ </ui:define>
+</ui:composition>

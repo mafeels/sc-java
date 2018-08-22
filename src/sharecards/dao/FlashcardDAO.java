@@ -29,4 +29,6 @@ public interface FlashcardDAO {
 	
 	public ArrayList <Flashcard> obterFlashcard(String codigoUsuario, String codigoFlashcard);
 	
+	public ArrayList <Flashcard> obterDecks(String codigoUsuario);
+	
 }

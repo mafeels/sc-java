@@ -119,6 +119,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 		stmt.setString(2, email);
 		ResultSet rs = stmt.executeQuery();
 		int countSenha = 0;
+		
 		if(rs != null && rs.next()){
           countSenha = rs.getInt("count(senha)");
         } 
@@ -180,7 +181,8 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 	 * @param u
 	 * @throws SQLException
 	 */
-	/*public void mostrarPerfil(Usuario u) throws SQLException {	
+	/*
+	 * public void mostrarPerfil(Usuario u) throws SQLException {	
 		Scanner in = new Scanner("System.in");
 		
 		System.out.println("Nome: "+ u.getPrimeiroNome() + " " + u.getUltimoNome());
