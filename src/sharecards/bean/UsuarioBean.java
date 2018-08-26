@@ -7,12 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import sharecards.dao.JDBCUsuarioDAO;
 import sharecards.dao.UsuarioDAO;
 import sharecards.model.Usuario;
 
-@ManagedBean(name = "usuarioBean")
+@ManagedBean(name="usuarioBean")
+@ViewScoped
 public class UsuarioBean {
 
 	private String codigoUsuario, username, dataNascimento, senha, email, primeiroNome, ultimoNome;
