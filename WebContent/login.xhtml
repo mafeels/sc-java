@@ -16,12 +16,12 @@
                                 </div>
 		                        <h:form>
 		                        	<h:outputLabel value="Email"/>
-		                        <h:inputText value="#{usuarioBean.email}" class="form-control"/>
+		                        <h:inputText value="#{autenticarBean.email}" class="form-control"/>
 			                        <h:outputLabel value="Senha"/>
-			                        <h:inputSecret value="#{usuarioBean.senha}" class="form-control" />
+			                        <h:inputSecret value="#{autenticarBean.senha}" class="form-control" />
 			                        <br/>
 			                        <p id="valid" class="message1"></p>
-			                        <h:commandButton action="#{usuarioBean.validaLogin}" value="Entrar" class="inmain"/>
+			                        <h:commandButton action="#{autenticarBean.autenticar}" value="Entrar" class="inmain"/>
 		                    	</h:form>
                                 <div>
                                     <a class="linkable" href="esqueciSenha1.html">Esqueceu a senha?</a>

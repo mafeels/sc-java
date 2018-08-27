@@ -6,6 +6,7 @@ import java.security.NoSuchProviderException;
 import java.sql.*;
 import java.util.Scanner;
 
+import sharecards.dao.FactoryConnection;
 import sharecards.model.Usuario;
 
 public class JDBCUsuarioDAO implements UsuarioDAO {
@@ -111,23 +112,39 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 	 * @throws SQLException
 	 */
 
-	public boolean validaLogin(String email, String senha) throws SQLException {
-		Connection conexao = new FactoryConnection().getConnection();
-
-		PreparedStatement stmt = conexao.prepareStatement("select count(senha) from usuario where (senha = ?) AND (e_mail = ?)");
-		stmt.setString(1, senha);
-		stmt.setString(2, email);
-		ResultSet rs = stmt.executeQuery();
-		int countSenha = 0;
-		
-		if(rs != null && rs.next()){
-          countSenha = rs.getInt("count(senha)");
-        } 
-		if (countSenha == 1) {
-			return true;
-		} else {
-			return false;
-		}
+	public Usuario validaLogin(String email, String senha) throws SQLException {
+		try {
+			System.out.println ("Abrindo conex„o ...");
+			Connection conexao = new FactoryConnection().getConnection();
+			
+			String sql = "select * FROM usuario WHERE e_mail = ? AND senha = ? ;";
+			
+			PreparedStatement comando = conexao.prepareStatement(sql);
+			
+			comando.setString(1, email);
+			comando.setString(2, senha);
+			
+			System.out.println("Executando comando ...");
+			ResultSet resultado = comando.executeQuery();
+			
+			Usuario user = null;
+			
+			while (resultado.next()) {
+				user = new Usuario();
+				user.setCodigoUsuario(resultado.getString("codigo_usuario"));
+				user.setEmail(resultado.getString("e_mail"));
+				user.setSenha(resultado.getString("senha"));	
+		    }
+			
+			System.out.println("\n Fechando conex„o ... ");
+			conexao.close();
+			
+			return user;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}	
 	}
 	/**
 	 *  Fun√ß√£o que retorna objeto do tipo usuario a partir de uma pesquisa no banco

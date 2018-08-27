@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 
 import sharecards.dao.JDBCUsuarioDAO;
@@ -14,7 +15,6 @@ import sharecards.dao.UsuarioDAO;
 import sharecards.model.Usuario;
 
 @ManagedBean(name="usuarioBean")
-@ViewScoped
 public class UsuarioBean {
 
 	private String codigoUsuario, username, dataNascimento, senha, email, primeiroNome, ultimoNome;
@@ -44,15 +44,6 @@ public class UsuarioBean {
 		UsuarioDAO edUs = new JDBCUsuarioDAO();
 		ResultSet rs = edUs.consultaUsuario(codigoUsuario);
 		return rs;
-	}
-	
-	public String validaLogin() throws SQLException{
-		UsuarioDAO edUs = new JDBCUsuarioDAO();
-		boolean confirm = edUs.validaLogin(email, senha);
-		if(confirm) {
-			return "dash";
-		}
-		return "login";
 	}
 
 	public Usuario retornaUsuario() throws ClassNotFoundException, SQLException, NoSuchAlgorithmException, NoSuchProviderException, UnsupportedEncodingException{

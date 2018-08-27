@@ -16,7 +16,7 @@ public interface UsuarioDAO {
 		
 		public ResultSet consultaUsuario(String codigoUsuario) throws ClassNotFoundException, SQLException;
 		
-		public boolean validaLogin(String email, String senha) throws SQLException;
+		public Usuario validaLogin(String email, String senha) throws SQLException;
 		
 		public Usuario retornaUsuario(String email, String senha) throws ClassNotFoundException, SQLException, NoSuchAlgorithmException, NoSuchProviderException, UnsupportedEncodingException;
 		
