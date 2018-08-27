@@ -34,7 +34,8 @@
             </a>
         <ul class="nav navbar-right top-nav">          
             <li>
-                <a href="#">Sair</a>
+            <h:form><h:commandButton action="#{autenticarBean.registrarSaida}" value="Sair" class="inmain"/></h:form>
+               
             </li>
             
             <li>
@@ -60,7 +61,7 @@
                 </li>
                 <li class="elementoSidenav">
                     <div>
-                        <h5>Edilsinho Ferreira
+                        <h5><h:outputText value="#{dashBean.primeiroNome}"></h:outputText> <h:outputText value=" "/><h:outputText value="#{dashBean.ultimoNome}"></h:outputText>
                         <a class="btn btn-default" href="configPerfil.html">
                         <span class="glyphicon glyphicon-wrench"></span>
                         </a>

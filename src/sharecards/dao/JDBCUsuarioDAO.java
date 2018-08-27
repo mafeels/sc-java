@@ -132,6 +132,10 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 			while (resultado.next()) {
 				user = new Usuario();
 				user.setCodigoUsuario(resultado.getString("codigo_usuario"));
+				user.setDataNascimento(resultado.getString("data_nascimento"));
+				user.setPrimeiroNome(resultado.getString("primeiro_nome"));
+				user.setUltimoNome(resultado.getString("ultimo_nome"));
+				user.setUsername(resultado.getString("username"));
 				user.setEmail(resultado.getString("e_mail"));
 				user.setSenha(resultado.getString("senha"));	
 		    }

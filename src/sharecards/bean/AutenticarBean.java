@@ -12,7 +12,7 @@ import sharecards.dao.JDBCUsuarioDAO;
 import sharecards.dao.UsuarioDAO;
 import sharecards.model.Usuario;
 
-@ManagedBean
+@ManagedBean(name="autenticarBean")
 public class AutenticarBean {
 	
 	private String email;
@@ -52,7 +52,7 @@ public class AutenticarBean {
 		HttpSession session = (HttpSession) ec.getSession(false);
 		session.removeAttribute("usuario");
 		
-		return "Autenticar";
+		return "login";
 	}
 
 	

@@ -13,12 +13,14 @@
                    
             <div>
             	<div class="dash">
-            	<h2>
             	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'biblioteca.xhtml'">Biblioteca</button>
             	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'biblioteca.xhtml'">Criar</button>
-                Decks</h2>
+            	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'biblioteca.xhtml'">Editar</button>
+            	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'biblioteca.xhtml'">Deletar</button>
+                
                 </div>
                 <div class="linha"></div>
+                <h2>Flashcards do <h:outputText value="#{dashBean.primeiroNome}"></h:outputText></h2> 
                 <div class="gallery">
                     <a href="dashFlash.html">
                         <img src="images/Cover.jpg" alt="flashcard de musica"/>
