@@ -14,28 +14,32 @@
             <div>
             	<div class="dash">
             	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'biblioteca.xhtml'">Biblioteca</button>
-            	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'criarFlash.xhtml'">Criar</button>
+            	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'biblioteca.xhtml'">Criar</button>
             	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'biblioteca.xhtml'">Editar</button>
             	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'biblioteca.xhtml'">Deletar</button>
                 
                 </div>
                 <div class="linha"></div>
-                <h2>Flashcards do <h:outputText value="#{dashBean.primeiroNome}"></h:outputText></h2> 
-                <div class="gallery">
-                    <a href="dashFlash.html">
-                        <img src="images/Cover.jpg" alt="flashcard de musica"/>
-                    </a>
-                    <div class="desc">Musica</div>
-                </div>
+                <h2><h:outputText value="#{dashBean.primeiroNome}"></h:outputText></h2> 
                 
-                <ui:repeat value="#{flashcardBean.dados}" var="thumb">
-	                	<div class="gallery">
-	                		<a href="dashFlash.xhtml?">
-	                			<img src="images/ampulheta.png" alt="flashcard"/>
-	                		</a>
-	                		<div class="desc"><h:outputText value="#{thumb.nomeFlashcard}"></h:outputText> </div>
-	                	</div>
-                </ui:repeat>
+                <div>
+                <h:form>
+	                <h:panelGroup id="conteudo">
+	 				<h:outputLabel value="Criar Flashcards" style="font-weight:bold"/><Br /><Br />
+	 				<h:panelGrid columns="2">
+	 					<h:outputLabel value="Nome: "/>
+	 					<h:inputText value="#{flashcardBean.nomeFlashcard}" />
+	 					<h:outputLabel value="Categoria: "/>
+	 					<h:inputText value="#{flashcardBean.categoriaFlashcard}" />
+	 					<h:outputLabel value="Frente: "/>
+	 					<h:inputText value="#{flashcardBean.frenteFlashcard}" />
+	 					<h:outputLabel value="Verso: "/>
+	 					<h:inputText value="#{flashcardBean.trasFlashcard}" />
+	 					</h:panelGrid><Br /><Br />
+	 					<h:commandButton value ="Salvar" action="#{flashcardBean.insereFlashcardSemIMG}"/>
+	 				</h:panelGroup>
+                </h:form>
+                </div>
             </div>
       
                     

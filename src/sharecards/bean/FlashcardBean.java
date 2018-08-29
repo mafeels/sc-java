@@ -9,10 +9,14 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 import sharecards.dao.FlashcardDAO;
 import sharecards.dao.JDBCFlashcardDAO;
 import sharecards.model.Flashcard;
+import sharecards.model.Usuario;
 
 @ManagedBean(name = "flashcardBean")
 public class FlashcardBean {
@@ -25,6 +29,13 @@ public class FlashcardBean {
 	public FlashcardBean(){
 		FlashcardDAO decks = new JDBCFlashcardDAO();
 		this.dados = decks.obterDecks("1");
+		FacesContext fc = FacesContext.getCurrentInstance();
+		ExternalContext ec = fc.getExternalContext();
+		HttpSession session = (HttpSession) ec.getSession(false);
+		Usuario us = (Usuario) session.getAttribute("usuario");
+		this.codigoUsuario = us.getCodigoUsuario();
+		this.autorFlashcard = us.getUsername();
+		
 	}
 	
 	public void obterDeckPublicos() {
