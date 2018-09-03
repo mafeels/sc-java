@@ -17,14 +17,7 @@
                 <h2 id="dash">Biblioteca</h2>
                 <div class="linha"></div>
                
-               <ui:repeat value="#{flashcardBean.dados}" var="thumb">
-	                	<div class="gallery">
-	                		<a href="dashFlash.html">
-	                			<img src="images/ampulheta.png" alt="flashcard"/>
-	                		</a>
-	                		<div class="desc"><h:outputText value="#{thumb.nomeFlashcard}"></h:outputText> </div>
-	                	</div>
-               </ui:repeat>
+               <ui:include src="/modulos/lista_flashcards_modulo.xhtml"/>
                
             </div>    
        </div>

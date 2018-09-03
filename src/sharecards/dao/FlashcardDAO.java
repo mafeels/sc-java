@@ -15,20 +15,14 @@ public interface FlashcardDAO {
 
 	public void insereFlashcard(Flashcard f) throws ClassNotFoundException, SQLException;
 	
-	public void insereFlashcardSemIMG(Flashcard f) throws ClassNotFoundException, SQLException;
-	
 	public int removeFlashcard(String codigoFlashcard) throws ClassNotFoundException, SQLException;
 	
-	public ResultSet consultaFlashcard(String codigoFlashcard) throws ClassNotFoundException, SQLException;
-	
 	public void editarFlashcard(String frente, String verso, String codigoFlashcard) throws ClassNotFoundException, SQLException;
-	
-	public Flashcard retornaFlashcard(String codigoUsuario, String codigoFlashcard) throws ClassNotFoundException, SQLException, NoSuchAlgorithmException, NoSuchProviderException, UnsupportedEncodingException, ParseException;
-	
-	public void mostrarBiblioteca(Usuario usuario) throws SQLException;
 	
 	public ArrayList <Flashcard> obterFlashcard(String codigoUsuario, String codigoFlashcard);
 	
 	public ArrayList <Flashcard> obterDecks(String codigoUsuario);
+	
+	public ArrayList <Flashcard> obterDecksPublicos();
 	
 }

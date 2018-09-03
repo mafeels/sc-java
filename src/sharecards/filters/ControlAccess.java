@@ -30,7 +30,7 @@ public class ControlAccess implements Filter {
 		HttpSession session = req.getSession();
 		
 		if (session.getAttribute("usuario") != null || 
-				req.getRequestURI().endsWith("login.xhtml")) {
+				req.getRequestURI().endsWith("login.xhtml") || req.getRequestURI().endsWith("index.xhtml"))  {
 			
 			chain.doFilter(request, response);
 			

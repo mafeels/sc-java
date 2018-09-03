@@ -12,30 +12,17 @@
         <div class="container-fluid well" >        
                    
             <div>
-            	<div class="dash">
-            	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'biblioteca.xhtml'">Biblioteca</button>
+            	<div class="dash"><h:form>
+            	<h:commandButton class="btn btn-primary btn-lg" value="Biblioteca" action="#{flashcardBean.obterDeckPublicos}"></h:commandButton>
             	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'criarFlash.xhtml'">Criar</button>
             	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'biblioteca.xhtml'">Editar</button>
             	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'biblioteca.xhtml'">Deletar</button>
+            	</h:form>
                 
                 </div>
                 <div class="linha"></div>
                 <h2>Flashcards do <h:outputText value="#{dashBean.primeiroNome}"></h:outputText></h2> 
-                <div class="gallery">
-                    <a href="dashFlash.html">
-                        <img src="images/Cover.jpg" alt="flashcard de musica"/>
-                    </a>
-                    <div class="desc">Musica</div>
-                </div>
-                
-                <ui:repeat value="#{flashcardBean.dados}" var="thumb">
-	                	<div class="gallery">
-	                		<a href="dashFlash.xhtml?">
-	                			<img src="images/ampulheta.png" alt="flashcard"/>
-	                		</a>
-	                		<div class="desc"><h:outputText value="#{thumb.nomeFlashcard}"></h:outputText> </div>
-	                	</div>
-                </ui:repeat>
+                <ui:include src="/modulos/lista_flashcards_modulo.xhtml"/>
             </div>
       
                     
