@@ -10,21 +10,19 @@
 
     <div id="page-wrapper">
         <div class="container-fluid well" >        
-                   
+            <div class="dash">
+            	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'dash.xhtml'">Retornar ao Dashboard</button>        
+   			</div>
+                      
             <div>
-            	<ui:include src="/modulos/botoes_navegacao.xhtml"/>
+            	<div class="linha"></div>
+                <h2 id="dash">Editar - Escolha qual flashcard editar</h2>
                 <div class="linha"></div>
-                <h2>Flashcards do <h:outputText value="#{dashBean.primeiroNome}"></h:outputText></h2> 
-                <ui:include src="/modulos/lista_flashcards_modulo.xhtml"/>
-            </div>
-      
-                    
-                    
+               
+               <ui:include src="/modulos/lista_flashcards_modulo_editar.xhtml"/>
+               
+            </div>    
        </div>
       </div>
-         
-
-        
-  
  </ui:define>
 </ui:composition>

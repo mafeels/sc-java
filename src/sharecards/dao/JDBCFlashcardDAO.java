@@ -65,7 +65,7 @@ public class JDBCFlashcardDAO implements FlashcardDAO{
 	 * @throws SQLException
 	 */
 	
-	public int removeFlashcard(String codigoFlashcard) throws ClassNotFoundException, SQLException {
+	public void removeFlashcard(String codigoFlashcard) throws ClassNotFoundException, SQLException {
 		   
 		Connection conexao = new FactoryConnection().getConnection();
 	       
@@ -73,13 +73,11 @@ public class JDBCFlashcardDAO implements FlashcardDAO{
 	       PreparedStatement pstmt = conexao.prepareStatement(sql);  
 	         
 	       pstmt.setString(1, codigoFlashcard);  
-	       int deleteCount = pstmt.executeUpdate(); 
+	       pstmt.executeUpdate(); 
 	       
 	       //System.out.println("N�mero de flashcards deletados: "+ deleteCount );  
 	      
 	       conexao.close();
-	       
-	       return deleteCount;
 	}
 	
 	/**
@@ -95,7 +93,7 @@ public class JDBCFlashcardDAO implements FlashcardDAO{
 		
 		Connection conexao = new FactoryConnection().getConnection();
 	       
-	       String sql = "UPDATE  flashcard  SET frente_flashcard= '?', verso_flashcard='?' WHERE codigoFlashcard='?';"; 
+	       String sql = "UPDATE flashcard SET frente_flashcard= ? , verso_flashcard= ? WHERE codigo_flashcard= ? "; 
 	       
 	       PreparedStatement stmt = conexao.prepareStatement(sql); 
 	       

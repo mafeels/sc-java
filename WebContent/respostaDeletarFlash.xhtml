@@ -14,8 +14,12 @@
             <div>
             	<ui:include src="/modulos/botoes_navegacao.xhtml"/>
                 <div class="linha"></div>
-                <h2>Flashcards do <h:outputText value="#{dashBean.primeiroNome}"></h:outputText></h2> 
-                <ui:include src="/modulos/lista_flashcards_modulo.xhtml"/>
+                <h2><h:outputText value="#{dashBean.primeiroNome}"></h:outputText></h2> 
+                
+                <div>
+	 					<h:outputLabel value="Flashcard deletado com sucesso! "/><Br/><Br/>
+	 					<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'dash.xhtml'">Retornar ao Dashboard</button>
+                </div>
             </div>
       
                     

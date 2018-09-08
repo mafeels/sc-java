@@ -56,4 +56,14 @@ function sair(){
     if (conf === true) {
         window.open("index.xhtml","_self");
     }
+    
+    function Deletar()
+    {
+     var response = confirm('Voce deseja mesmo deletar esse flashcard?');
+    
+    if (response){
+    	
+    }
+    else alert('Operação abortada');
+    }
 }

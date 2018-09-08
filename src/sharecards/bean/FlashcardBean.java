@@ -45,7 +45,7 @@ public class FlashcardBean {
 		return "biblioteca";
 	}
 	
-	public void insereFlashcard() throws ClassNotFoundException, SQLException, NoSuchAlgorithmException, NoSuchProviderException, UnsupportedEncodingException{
+	public String insereFlashcard() throws ClassNotFoundException, SQLException, NoSuchAlgorithmException, NoSuchProviderException, UnsupportedEncodingException{
 		Flashcard flash = new Flashcard();
 		flash.setCodigoUsuario(codigoUsuario);
 		flash.setNomeFlashcard(nomeFlashcard);
@@ -57,12 +57,14 @@ public class FlashcardBean {
 		
 		FlashcardDAO edFl = new JDBCFlashcardDAO();
 		edFl.insereFlashcard(flash);
+		return "respostaCriarFlash";
 	}
 	
-	public int removeFlashcard() throws ClassNotFoundException, SQLException{
+	
+	public String removeFlashcard(Flashcard fl) throws ClassNotFoundException, SQLException{
 		FlashcardDAO edFl = new JDBCFlashcardDAO();
-		int deletCount = edFl.removeFlashcard(codigoFlashcard);
-		return deletCount;
+		edFl.removeFlashcard(fl.getCodigoFlashcard());
+		return "respostaDeletarFlash";
 		
 	}
 	
@@ -77,10 +79,19 @@ public class FlashcardBean {
 		return "dashFlash";
 	}
 	
-	public void editarFlashcard() throws ClassNotFoundException, SQLException{
+	public String receberEditarFlashcard(Flashcard fl) throws ClassNotFoundException, SQLException{
+		this.codigoFlashcard = fl.getCodigoFlashcard();
+		this.frenteFlashcard = fl.getFrenteFlashcard();
+		this.trasFlashcard = fl.getTrasFlashcard();
+		return "modificarDadosFlash";
+	}
+	
+	public String editarFlashcard() throws ClassNotFoundException, SQLException{
 		FlashcardDAO edFl = new JDBCFlashcardDAO();
 		edFl.editarFlashcard(frenteFlashcard, trasFlashcard, codigoFlashcard);
+		return "respostaEditarFlash";
 	}
+	
 	
 //	public Flashcard retornaFlashcard() throws ClassNotFoundException, SQLException, NoSuchAlgorithmException, NoSuchProviderException, UnsupportedEncodingException, ParseException{
 //		FlashcardDAO edFl = new JDBCFlashcardDAO();

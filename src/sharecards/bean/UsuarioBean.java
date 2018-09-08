@@ -9,6 +9,9 @@ import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 import sharecards.dao.JDBCUsuarioDAO;
 import sharecards.dao.UsuarioDAO;
@@ -30,8 +33,29 @@ public class UsuarioBean {
 		
 		UsuarioDAO edUs = new JDBCUsuarioDAO();
 		this.codigoUsuario = edUs.insereUsuario(us);
+
+
 		
-		return "dash";
+		Usuario usuario = edUs.validaLogin(email, senha);
+		
+		FacesContext fc = FacesContext.getCurrentInstance();
+		
+		
+		if (usuario != null) {
+			ExternalContext ec = fc.getExternalContext();
+			HttpSession session = (HttpSession)ec.getSession(false);
+			session.setAttribute("usuario", usuario);
+			System.out.println("meme");
+			return "dash";
+		
+		} else {
+			
+			/*FacesMessage fm = new FacesMessage("Usuário e/ou senha inválidos.");
+			fm.setSeverity(FacesMessage.SEVERITY_ERROR);
+			fc.addMessage(null,fm);*/
+			System.out.println("memeee");
+			return "login";
+		}
 	} 
 	
 	public int removeUsuario() throws ClassNotFoundException, SQLException{

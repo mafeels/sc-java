@@ -46,7 +46,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 		System.out.println("Fechando conexão ...");
 		stmt.close();
 		
-//		String cod = null;
+    	String cod = null;
 //		PreparedStatement pstmt = conexao.prepareStatement("select codigo_usuario FROM usuario WHERE (senha = ?) AND (e_mail = ?)");
 //		pstmt.setString(1, u.getSenha());
 //		pstmt.setString(2, u.getEmail());
@@ -55,9 +55,9 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 //            cod = rs.getString("codigo_usuario");
 //        } 
 //		pstmt.close();
-//		conexao.close();
+		conexao.close();
 //		
-//		return cod; 
+    	return cod; 
 		
 	}
 	/**

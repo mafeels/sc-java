@@ -15,7 +15,7 @@ public interface FlashcardDAO {
 
 	public void insereFlashcard(Flashcard f) throws ClassNotFoundException, SQLException;
 	
-	public int removeFlashcard(String codigoFlashcard) throws ClassNotFoundException, SQLException;
+	public void removeFlashcard(String codigoFlashcard) throws ClassNotFoundException, SQLException;
 	
 	public void editarFlashcard(String frente, String verso, String codigoFlashcard) throws ClassNotFoundException, SQLException;
 	

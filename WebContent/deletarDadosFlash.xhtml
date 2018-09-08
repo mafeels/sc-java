@@ -21,18 +21,16 @@
                 <div>
                 <h:form>
 	                <h:panelGroup id="conteudo">
-	 				<h:outputLabel value="Criar Flashcards" style="font-weight:bold"/><Br /><Br />
+	 				<h:outputLabel value="Editar Flashcard #{flashcardBean.codigoFlashcard}" style="font-weight:bold"/><Br /><Br />
 	 				<h:panelGrid columns="2">
-	 					<h:outputLabel value="Nome: "/>
-	 					<h:inputText value="#{flashcardBean.nomeFlashcard}" />
-	 					<h:outputLabel value="Categoria: "/>
-	 					<h:inputText value="#{flashcardBean.categoriaFlashcard}" />
+	 					<h:outputLabel value="Codigo: "/>
+	 					<h:inputText value="#{flashcardBean.codigoFlashcard}" label="#{flashcardBean.codigoFlashcard}"/>
 	 					<h:outputLabel value="Frente: "/>
-	 					<h:inputText value="#{flashcardBean.frenteFlashcard}" />
+	 					<h:inputText value="#{flashcardBean.frenteFlashcard}" label="#{flashcardBean.frenteFlashcard}" />
 	 					<h:outputLabel value="Verso: "/>
-	 					<h:inputText value="#{flashcardBean.trasFlashcard}" />
+	 					<h:inputText value="#{flashcardBean.trasFlashcard}" label="#{flashcardBean.trasFlashcard}"/>
 	 					</h:panelGrid><Br /><Br />
-	 					<h:commandButton value ="Salvar" action="#{flashcardBean.insereFlashcard}"/>
+	 					<h:commandButton value ="Salvar alteracoes" action="#{flashcardBean.editarFlashcard}"/>
 	 				</h:panelGroup>
                 </h:form>
                 </div>

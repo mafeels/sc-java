@@ -1,0 +1,19 @@
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page" 
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets" 
+    xmlns:h="http://java.sun.com/jsf/html" >
+    
+    <div class="dash"><h:form>
+            	<h:commandButton class="btn btn-primary btn-lg" value="Biblioteca" action="#{flashcardBean.obterDeckPublicos}"></h:commandButton>
+            	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'criarFlash.xhtml'">Criar</button>
+            	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'editarFlash.xhtml'">Editar</button>
+            	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'deletarFlash.xhtml'">Deletar</button>
+            	</h:form>
+                
+    </div>
+    
+    
+    
+</ui:composition>
