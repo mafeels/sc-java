@@ -282,4 +282,20 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 		return cod;
 	}
 	
+	public void editarUsuario(Usuario u) throws SQLException {
+		Connection conexao = new FactoryConnection().getConnection();
+
+		PreparedStatement stmt = conexao.prepareStatement("UPDATE usuario SET primeiro_nome= ? , ultimo_nome= ?, username= ?, data_nascimento= ?, senha= ? WHERE codigo_usuario= ? ");
+
+		stmt.setString(1, u.getPrimeiroNome());
+		stmt.setString(2, u.getUltimoNome());
+		stmt.setString(3, u.getUsername());
+		stmt.setString(4, u.getDataNascimento());
+		stmt.setString(5, u.getSenha());
+		stmt.setString(6, u.getCodigoUsuario());
+		
+		stmt.execute();
+		stmt.close();
+		conexao.close();
+	}
 }

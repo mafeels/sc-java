@@ -7,13 +7,12 @@
 	>
 	
 <ui:define name="dash_conteudo">
-     
 
     <div id="page-wrapper">
         <div class="container-fluid well" >
 
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
-                <button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'dash.xhtml'">Retornar ao Dashboard</button>
+                <button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'dash.xhtml'">Retornar ao Dashboard</button><br/>
             </div>
                     
             <div class="col-xs-12 perfil1">           
@@ -21,52 +20,53 @@
                 <h4><strong>Perfil</strong></h4>
                 <div class="form-horizontal" >
              
-                	<div class="form-group">
+                	<!-- <div class="form-group">
                 		<label for="first_name" class="col-lg-3 control-label">Mudar Foto do perfil:</label>
                 		<div class="col-lg-8">
 		                 	<input type="file" name="Arquivo" id="Arquivo"/>
 		                    <input type="submit" value="Enviar"/>
 		                    <input type="reset" value="Apagar"/>
 	                    </div>
-                    </div>
-                    
+                    </div> -->
+                    <h:form>
                     <div class="form-group">
                         <label for="first_name" class="col-lg-3 control-label">Primeiro nome:</label>
                         <div class="col-lg-8">
-                            <input  id="first_name" class="form-control" type="text" value="Edilsinho"/>
+                            <h:inputText value="#{usuarioBean.primeiroNome}" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="last_name" class="col-lg-3 control-label">Ultimo nome:</label>
                         <div class="col-lg-8">
-                            <input  id="last_name" class="form-control" type="text" value="Ferreira"/>
+                            <h:inputText value="#{usuarioBean.ultimoNome}" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="user_email" class="col-lg-3 control-label">Email:</label>
+                        <label for="user_email" class="col-lg-3 control-label">Username:</label>
                         <div class="col-lg-8">
-                            <input id="user_email" class="form-control" type="text" value="edilsinho(a)gmail.com"/>
+                            <h:inputText value="#{usuarioBean.username}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email" class="col-lg-3 control-label">Data de Nascimento:</label>
+                        <div class="col-lg-8">
+                            <h:inputText value="#{usuarioBean.dataNascimento}"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="pass" class="col-md-3 control-label">Nova senha:</label>
                         <div class="col-md-8">
-                            <input id="pass" class="form-control" type="password" value="BIGOVRAU"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="pass_repet" class="col-md-3 control-label">Confirmar senha:</label>
-                        <div class="col-md-8">
-                            <input  id="pass_repet" class="form-control" type="password" value="BIGOVRAU"/>
+                            <h:inputSecret value="#{usuarioBean.senha}" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-8">
-                            <input type="button" class="btn btn-primary" value="Salvar"/>
+                            <h:commandButton value ="Salvar alteracoes" action="#{usuarioBean.editarUsuario}"/>
                         </div>
                         
                     </div>
+                    </h:form>
                 </div>
             
             </div>

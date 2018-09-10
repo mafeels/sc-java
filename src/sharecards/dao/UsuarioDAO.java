@@ -22,6 +22,8 @@ public interface UsuarioDAO {
 		
 		public void alteraSenha(String email, String senha) throws SQLException;
 		
+		public void editarUsuario(Usuario u) throws SQLException;
+		
 		//public void mostrarPerfil(Usuario u) throws SQLException;
 		
 		public String retornaCodigoUsuario(String email, String senha) throws ClassNotFoundException, SQLException, NoSuchAlgorithmException, NoSuchProviderException, UnsupportedEncodingException;

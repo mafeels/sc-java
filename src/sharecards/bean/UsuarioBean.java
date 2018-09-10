@@ -17,10 +17,11 @@ import sharecards.dao.JDBCUsuarioDAO;
 import sharecards.dao.UsuarioDAO;
 import sharecards.model.Usuario;
 
-@ManagedBean(name="usuarioBean")
+@ManagedBean(name = "usuarioBean")
 public class UsuarioBean {
 
 	private String codigoUsuario, username, dataNascimento, senha, email, primeiroNome, ultimoNome;
+	
 	
 	public String insereUsuario() throws ClassNotFoundException, SQLException{
 		Usuario us = new Usuario();
@@ -57,6 +58,27 @@ public class UsuarioBean {
 			return "login";
 		}
 	} 
+	
+	public String editarUsuario() throws ClassNotFoundException, SQLException{
+		FacesContext fc = FacesContext.getCurrentInstance();
+		ExternalContext ec = fc.getExternalContext();
+		HttpSession session = (HttpSession) ec.getSession(false);
+		Usuario us = (Usuario) session.getAttribute("usuario");
+		
+		Usuario usr = new Usuario();
+		usr.setPrimeiroNome(primeiroNome);
+		usr.setUltimoNome(ultimoNome);
+		usr.setUsername(username);
+		usr.setDataNascimento(dataNascimento);
+		usr.setSenha(senha);
+		usr.setCodigoUsuario(us.getCodigoUsuario());
+		usr.setEmail(us.getEmail());
+		
+		UsuarioDAO edUs = new JDBCUsuarioDAO();
+		edUs.editarUsuario(usr);
+		
+		return "respostaEditarUsuario";
+	}
 	
 	public int removeUsuario() throws ClassNotFoundException, SQLException{
 		UsuarioDAO edUs = new JDBCUsuarioDAO();
