@@ -35,14 +35,7 @@ public class FlashcardBean {
 		this.codigoUsuario = us.getCodigoUsuario();
 		this.autorFlashcard = us.getUsername();
 		FlashcardDAO decks = new JDBCFlashcardDAO();
-		this.dados = decks.obterDecks(us.getCodigoUsuario());
-		
-	}
-	
-	public String obterDeckPublicos() {
-		FlashcardDAO decks = new JDBCFlashcardDAO();
 		this.dados = decks.obterDecksPublicos();
-		return "biblioteca";
 	}
 	
 	public String insereFlashcard() throws ClassNotFoundException, SQLException, NoSuchAlgorithmException, NoSuchProviderException, UnsupportedEncodingException{
@@ -76,7 +69,20 @@ public class FlashcardBean {
 		this.frenteFlashcard = fl.getFrenteFlashcard();
 		this.imageFlashcard = fl.getImageFlashcard();
 		this.trasFlashcard = fl.getTrasFlashcard();
+		System.out.println(this.codigoFlashcard);
 		return "dashFlash";
+	}
+	
+	public String consultaFlashcardBiblioteca(Flashcard fl) throws ClassNotFoundException, SQLException{
+		this.codigoFlashcard = fl.getCodigoFlashcard();
+		this.nomeFlashcard = fl.getNomeFlashcard();
+		this.autorFlashcard = fl.getAutorFlashcard();
+		this.categoriaFlashcard = fl.getCategoriaFlashcard();
+		this.frenteFlashcard = fl.getFrenteFlashcard();
+		this.imageFlashcard = fl.getImageFlashcard();
+		this.trasFlashcard = fl.getTrasFlashcard();
+		System.out.println(this.codigoFlashcard);
+		return "dashFlashBiblioteca";
 	}
 	
 	public String receberEditarFlashcard(Flashcard fl) throws ClassNotFoundException, SQLException{

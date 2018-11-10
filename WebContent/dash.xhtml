@@ -15,7 +15,19 @@
             	<ui:include src="/modulos/botoes_navegacao.xhtml"/>
                 <div class="linha"></div>
                 <h2>Flashcards do <h:outputText value="#{dashBean.primeiroNome}"></h:outputText></h2> 
-                <ui:include src="/modulos/lista_flashcards_modulo.xhtml"/>
+                <h:outputText value="#{flashcardBean.codigoUsuario}"></h:outputText>
+                
+                 <h:form>
+    				<ui:repeat value="#{dashBean.dados}" var="thumb">
+						<div class="gallery">
+							<h:commandLink action="#{flashcardBean.consultaFlashcard(thumb)}"> <img src="images/ampulheta.png" alt="flashcard"/></h:commandLink>
+							<div class="desc">
+								<h:outputText value="#{thumb.nomeFlashcard}"></h:outputText>
+								<h:outputText value="#{thumb.codigoUsuario}"></h:outputText>
+							</div>
+						</div>
+    				</ui:repeat>
+    			</h:form>
             </div>
       
                     

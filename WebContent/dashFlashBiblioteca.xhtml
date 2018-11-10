@@ -1,0 +1,64 @@
+<ui:composition template="/templates/dash_template.xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	>
+	
+<ui:define name="dash_conteudo">
+     
+
+    <div id="page-wrapper">
+        <div class="container-fluid well" >        
+                   
+            <div>
+            	<div class="dash">
+            	<button class="btn btn-primary btn-lg" type="button" onclick="window.location.href = 'biblioteca.xhtml'">Voltar para Biblioteca</button>        
+   				</div>
+                <div class="linha"></div>
+                <h2>
+                	<i><h:outputText value="#{flashcardBean.nomeFlashcard }"></h:outputText></i><h:outputText value=" - #{flashcardBean.autorFlashcard }"/>
+                </h2> 
+                
+            </div>
+      		<div>
+      			<h:outputText value="categoria: #{flashcardBean.categoriaFlashcard }"/><br/>
+      			
+      			<div class="flashcards2">
+                <input type="button" value="Revelar" class="inmainRev btn-success" onclick="document.querySelector('.flip-container').classList.toggle('hover');"/>
+                <div class="flip-container noHover" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <form>
+                                <fieldset>
+                                    <div>
+                                        <legend>Frente</legend>
+                                        <textarea name="Frente" rows="4" cols="20"><h:outputText value="#{flashcardBean.frenteFlashcard }"/></textarea>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="back">
+                            <form>
+                                <fieldset>
+                                    <div>
+                                        <legend>Verso</legend>
+                                        <textarea name="Verso" rows="4" cols="20"><h:outputText value="#{flashcardBean.trasFlashcard }"/></textarea>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      		</div>
+                    
+                    
+       </div>
+      </div>
+         
+
+        
+  
+ </ui:define>
+</ui:composition>

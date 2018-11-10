@@ -17,8 +17,17 @@
                 <h2 id="dash">Biblioteca - Acesse os flashcards do sistema!</h2>
                 <div class="linha"></div>
                
-               <ui:include src="/modulos/lista_flashcards_modulo.xhtml"/>
-               
+                <h:form>
+    				<ui:repeat value="#{flashcardBean.dados}" var="thumb">
+						<div class="gallery">
+							<h:commandLink action="#{flashcardBean.consultaFlashcardBiblioteca(thumb)}"> <img src="images/ampulheta.png" alt="flashcard"/></h:commandLink>
+							<div class="desc">
+								<h:outputText value="#{thumb.nomeFlashcard}"></h:outputText>
+								<h:outputText value="#{thumb.codigoUsuario}"></h:outputText>
+							</div>
+						</div>
+    				</ui:repeat>
+    			</h:form>
             </div>    
        </div>
       </div>

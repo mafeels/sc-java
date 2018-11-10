@@ -6,7 +6,7 @@
     xmlns:h="http://java.sun.com/jsf/html" >
     
     <h:form>
-    <ui:repeat value="#{flashcardBean.dados}" var="thumb">
+    <ui:repeat value="#{dashBean.dados}" var="thumb">
 	<div class="gallery">
 		<h:commandLink action="#{flashcardBean.receberEditarFlashcard(thumb)}"> <img src="images/ampulheta.png" alt="flashcard"/></h:commandLink>
 		<div class="desc">

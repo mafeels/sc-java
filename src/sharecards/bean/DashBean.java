@@ -1,6 +1,7 @@
 package sharecards.bean;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -10,14 +11,18 @@ import javax.servlet.http.HttpSession;
 
 import com.mysql.jdbc.CachedResultSetMetaData;
 
+import sharecards.dao.FlashcardDAO;
+import sharecards.dao.JDBCFlashcardDAO;
 import sharecards.dao.JDBCUsuarioDAO;
 import sharecards.dao.UsuarioDAO;
+import sharecards.model.Flashcard;
 import sharecards.model.Usuario;
 
 @ManagedBean(name="dashBean")
 public class DashBean {
 	
 	private String codigoUsuario, username, dataNascimento, senha, email, primeiroNome, ultimoNome;
+	private ArrayList<Flashcard> dados;
 	
 	public DashBean (){
 		FacesContext fc = FacesContext.getCurrentInstance();
@@ -28,6 +33,8 @@ public class DashBean {
 		this.primeiroNome = us.getPrimeiroNome();
 		this.ultimoNome = us.getUltimoNome();
 		this.username = us.getUsername();
+		FlashcardDAO decks = new JDBCFlashcardDAO();
+		this.setDados(decks.obterDecks(us.getCodigoUsuario()));
 	}
 
 	public String getCodigoUsuario() {
@@ -84,6 +91,14 @@ public class DashBean {
 
 	public void setUltimoNome(String ultimoNome) {
 		this.ultimoNome = ultimoNome;
+	}
+
+	public ArrayList<Flashcard> getDados() {
+		return dados;
+	}
+
+	public void setDados(ArrayList<Flashcard> dados) {
+		this.dados = dados;
 	}
 	
 }
