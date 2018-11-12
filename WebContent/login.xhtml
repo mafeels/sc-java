@@ -16,7 +16,7 @@
                                 </div>
 		                        <h:form>
 		                        	<h:outputLabel value="Email"/>
-		                        <h:inputText value="#{autenticarBean.email}" class="form-control"/>
+		                        	<h:inputText value="#{autenticarBean.email}" class="form-control"/>
 			                        <h:outputLabel value="Senha"/>
 			                        <h:inputSecret value="#{autenticarBean.senha}" class="form-control" />
 			                        <br/>
@@ -25,15 +25,17 @@
 		                    	</h:form>
                                 <div>
                                     <a class="linkable" href="esqueciSenha1.xhtml">Esqueceu a senha?</a>
+                                </div><br/>
+                                <div>
+                                	<h:messages globalOnly="true"/>
                                 </div>
-                                <br/><br/><br/>
+                                
+                                <br/>
                                 <div>
                                     <a class="linkable" href="index.xhtml" >Nao eh cadastrado? Cadastre-se agora!</a>
                                 </div>
                                 
-                                <div class="alert alert-danger alerta" data-dismiss="alert">
-                                    Preencher todos os campos!
-                                </div>
+                                
                             </div>
                         </div>
 

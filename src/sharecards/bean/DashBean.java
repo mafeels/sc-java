@@ -33,6 +33,7 @@ public class DashBean {
 		this.primeiroNome = us.getPrimeiroNome();
 		this.ultimoNome = us.getUltimoNome();
 		this.username = us.getUsername();
+		this.dataNascimento = us.getDataNascimento();
 		FlashcardDAO decks = new JDBCFlashcardDAO();
 		this.setDados(decks.obterDecks(us.getCodigoUsuario()));
 	}

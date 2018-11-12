@@ -10,26 +10,29 @@
 
     <div id="page-wrapper">
         <div class="container-fluid well" >        
-                   
+                 
             <div>
             	<ui:include src="/modulos/botoes_navegacao.xhtml"/>
+            	
+            	<h:form><h:commandButton id="atualizar" class="btn btn-primary btn-lg" type="button"></h:commandButton></h:form>
+            	
                 <div class="linha"></div>
                 <h2>Flashcards do <h:outputText value="#{dashBean.primeiroNome}"></h:outputText></h2> 
-                <h:outputText value="#{flashcardBean.codigoUsuario}"></h:outputText>
                 
-                 <h:form>
+                 <h:form id="form1">
     				<ui:repeat value="#{dashBean.dados}" var="thumb">
 						<div class="gallery">
 							<h:commandLink action="#{flashcardBean.consultaFlashcard(thumb)}"> <img src="images/ampulheta.png" alt="flashcard"/></h:commandLink>
+							<f:ajax event="click" render=":form1" execute="atualizar"></f:ajax>
 							<div class="desc">
 								<h:outputText value="#{thumb.nomeFlashcard}"></h:outputText>
-								<h:outputText value="#{thumb.codigoUsuario}"></h:outputText>
 							</div>
 						</div>
     				</ui:repeat>
     			</h:form>
+    			
             </div>
-      
+      	
                     
                     
        </div>

@@ -32,33 +32,50 @@
                     <h:form>
                     <div class="form-group">
                         <label for="first_name" class="col-lg-3 control-label">Primeiro nome:</label>
-                        <div class="col-lg-8">
-                            <h:inputText value="#{usuarioBean.primeiroNome}" />
-                        </div>
+                            <h:inputText id="first_name" value="#{usuarioBean.primeiroNome}" required="true">
+                            	<f:validateLength maximum="20"/>
+                            </h:inputText>
+                            <h:message for="first_name"/>
+                            <br/>
+                            <h:outputText value="Anterior: "></h:outputText>
+                            <h:outputText value="#{dashBean.primeiroNome}"></h:outputText>
                     </div>
                     <div class="form-group">
                         <label for="last_name" class="col-lg-3 control-label">Ultimo nome:</label>
-                        <div class="col-lg-8">
-                            <h:inputText value="#{usuarioBean.ultimoNome}" />
-                        </div>
+                            <h:inputText id="last_name" value="#{usuarioBean.ultimoNome}" required="true">
+                            	<f:validateLength maximum="20"/>
+                            </h:inputText>
+                            <h:message for="last_name"/>
+                            <br/>
+                            <h:outputText value="Anterior: "></h:outputText>
+                            <h:outputText value="#{dashBean.ultimoNome}"></h:outputText>
                     </div>
                     <div class="form-group">
-                        <label for="user_email" class="col-lg-3 control-label">Username:</label>
-                        <div class="col-lg-8">
-                            <h:inputText value="#{usuarioBean.username}" />
-                        </div>
+                        <label for="username" class="col-lg-3 control-label">Username:</label>
+                            <h:inputText id="username" value="#{usuarioBean.username}" required="true">
+                            	<f:validateLength maximum="20"/>
+                            </h:inputText>
+                            <h:message for="username"/>
+                            <br/>
+                            <h:outputText value="Anterior: "></h:outputText>
+                            <h:outputText value="#{dashBean.username}"></h:outputText>
                     </div>
                     <div class="form-group">
-                        <label for="user_email" class="col-lg-3 control-label">Data de Nascimento:</label>
-                        <div class="col-lg-8">
-                            <h:inputText value="#{usuarioBean.dataNascimento}"/>
-                        </div>
+                        <label for="date_user" class="col-lg-3 control-label">Data de Nascimento:</label> 
+                            <h:inputText id="date_user" value="#{usuarioBean.dataNascimento}" required="true">
+                            	<f:validateLength maximum="10"/>
+                            </h:inputText>
+                            <h:message for="date_user"/>
+                            <br/>
+                            <h:outputText value="Anterior: "></h:outputText>
+                            <h:outputText value="#{dashBean.dataNascimento}"></h:outputText>
                     </div>
                     <div class="form-group">
                         <label for="pass" class="col-md-3 control-label">Nova senha:</label>
-                        <div class="col-md-8">
-                            <h:inputSecret value="#{usuarioBean.senha}" />
-                        </div>
+                            <h:inputSecret id="pass" value="#{usuarioBean.senha}" required="true">
+                            	<f:validateLength maximum="12"/>
+                            </h:inputSecret>
+                            <h:message for="pass"/>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label"></label>

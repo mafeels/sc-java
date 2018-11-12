@@ -48,17 +48,41 @@
                     <p id="regist"><i>Registre-se</i></p>
                     <h:form>
                         <h:outputLabel value="Primeiro Nome"/>
-                        <h:inputText value="#{usuarioBean.primeiroNome}" class="inmaind"/>
+                        <h:inputText value="#{usuarioBean.primeiroNome}" class="inmaind" id="first_name" converterMessage="Tamanho excedido de 20 caracteres">
+                        	<f:validateLength maximum="20"/>
+                        </h:inputText>
+                            <h:message for="first_name"/><br/>
+                            
                         <h:outputLabel value="Segundo Nome"/>
-                        <h:inputText value="#{usuarioBean.ultimoNome}" class="inmaind"/>
+                        <h:inputText value="#{usuarioBean.ultimoNome}" class="inmaind" id="last_name" converterMessage="Tamanho excedido de 20 caracteres">
+                        	<f:validateLength maximum="20"/>
+                        </h:inputText>
+                            <h:message for="last_name"/><br/>
+                            
                         <h:outputLabel value="Data de nascimento"/>
-                        <h:inputText value="#{usuarioBean.dataNascimento}" class="inmaind"/>
+                        <h:inputText value="#{usuarioBean.dataNascimento}" class="inmaind" id="date_user" converterMessage="Utilize o formato YYYY/MM/DD">
+                        	<f:validateLength maximum="10"/>
+                        </h:inputText>
+                            <h:message for="date_user"/><br/>
+                            
                         <h:outputLabel value="Username"/>
-                        <h:inputText value="#{usuarioBean.username}" class="inmaind"/>
+                        <h:inputText value="#{usuarioBean.username}" class="inmaind" id="username" converterMessage="Tamanho excedido de 20 caracteres">
+                        	<f:validateLength maximum="20"/>
+                        </h:inputText>
+                            <h:message for="username"/><br/>
+                            
                         <h:outputLabel value="Email"/>
-                        <h:inputText value="#{usuarioBean.email}" class="inmaind"/>
-                        <h:outputLabel value="Senha"/>
-                        <h:inputSecret value="#{usuarioBean.senha}"  class="inmaind"/>
+                        <h:inputText value="#{usuarioBean.email}" class="inmaind" id="email" converterMessage="Tamanho excedido de 50 caracteres">
+                        	<f:validateLength maximum="50"/>
+                        </h:inputText>
+                            <h:message for="email"/><br/>
+                            
+                        <h:outputLabel value="Senha"/><br/>
+                        <h:inputSecret value="#{usuarioBean.senha}"  class="inmaind" id="pass" converterMessage="Tamanho excedido de 12 caracteres">
+                        	<f:validateLength maximum="12"/>
+                        </h:inputSecret><br/>
+                            <h:message for="pass"/>
+                            
                         <br/>
                         <p id="valid" class="message1"></p>
                         <h:commandButton value="Registrar-se" action="#{usuarioBean.insereUsuario}" class="inmain"/>

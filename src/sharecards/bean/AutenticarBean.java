@@ -35,11 +35,8 @@ public class AutenticarBean {
 			return "dash";
 		
 		} else {
-			
-			/*FacesMessage fm = new FacesMessage("Usuário e/ou senha inválidos.");
-			fm.setSeverity(FacesMessage.SEVERITY_ERROR);
-			fc.addMessage(null,fm);*/
-			System.out.println("memeee");
+			FacesMessage mensagem = new FacesMessage("Dados Inválidos");
+			FacesContext.getCurrentInstance().addMessage(null, mensagem);
 			return "login";
 		}
 		
